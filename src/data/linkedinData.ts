@@ -12,7 +12,7 @@ export const linkedinData = {
     linkedinUrl: 'https://www.linkedin.com/in/saksham-khandelwal-80022b322/',
     githubUrl: 'https://github.com/SAKSHAM19207',
     openToWork: true,
-    seeking: 'Software Engineer Intern and Associate Software Developer',
+    seeking: 'Open to opportunities',
   },
 
   roles: [
