@@ -1,37 +1,17 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Trophy, Award, Star, Medal } from 'lucide-react';
+import { linkedinData } from '@/data/linkedinData';
 
 const ExperienceSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const achievements = [
-    {
-      icon: Trophy,
-      title: 'Hackathon Winner',
-      description: 'First place at National Level Hackathon 2024',
-      year: '2024',
-    },
-    {
-      icon: Star,
-      title: 'Open Source Contributor',
-      description: 'Active contributor to major open source projects',
-      year: '2023',
-    },
-    {
-      icon: Award,
-      title: 'Academic Excellence',
-      description: 'Dean\'s List for 4 consecutive semesters',
-      year: '2022-24',
-    },
-    {
-      icon: Medal,
-      title: 'Competitive Programming',
-      description: 'Top 100 in CodeChef Long Challenge',
-      year: '2023',
-    },
-  ];
+  const iconMap = [Trophy, Star, Award, Medal];
+  const achievements = linkedinData.achievements.map((achievement, index) => ({
+    ...achievement,
+    icon: iconMap[index % iconMap.length],
+  }));
 
   return (
     <section id="experience" className="py-24 relative">

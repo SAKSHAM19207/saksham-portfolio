@@ -3,41 +3,12 @@ import { useRef } from 'react';
 import { ExternalLink, Github, Folder } from 'lucide-react';
 import TiltCard from '../TiltCard';
 import { Button } from '@/components/ui/button';
+import { linkedinData } from '@/data/linkedinData';
 
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with real-time inventory management, secure payments, and admin dashboard.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'AI Chat Application',
-      description: 'Real-time chat app powered by AI for smart responses, featuring message encryption and file sharing.',
-      tech: ['Next.js', 'OpenAI', 'Socket.io', 'PostgreSQL'],
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'Task Management System',
-      description: 'Collaborative project management tool with Kanban boards, team workflows, and analytics.',
-      tech: ['React', 'TypeScript', 'Express', 'Redis'],
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'Cloud File Storage',
-      description: 'Secure cloud storage solution with file versioning, sharing capabilities, and real-time sync.',
-      tech: ['Vue.js', 'AWS S3', 'Docker', 'Python'],
-      github: 'https://github.com',
-      live: null,
-    },
-  ];
+  const { projects } = linkedinData;
 
   return (
     <section id="projects" className="py-24 relative">
