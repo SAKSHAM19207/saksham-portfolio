@@ -1,25 +1,27 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import TiltCard from '../TiltCard';
+import { linkedinData } from '@/data/linkedinData';
 
 const SkillsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { skills } = linkedinData;
 
   const skillCategories = [
     {
       title: 'Languages',
-      skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'SQL'],
+      skills: skills.languages,
       color: 'primary',
     },
     {
-      title: 'Frameworks',
-      skills: ['React', 'Node.js', 'Express', 'Next.js', 'Django', 'Spring Boot'],
+      title: 'Core Skills',
+      skills: skills.frameworks,
       color: 'accent',
     },
     {
       title: 'Tools & Tech',
-      skills: ['Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL', 'Redis'],
+      skills: skills.tools,
       color: 'primary',
     },
   ];

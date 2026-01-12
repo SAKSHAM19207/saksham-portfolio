@@ -1,32 +1,28 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { GraduationCap, Briefcase, Code2 } from 'lucide-react';
+import { GraduationCap, Briefcase, Code2, Award } from 'lucide-react';
 import TiltCard from '../TiltCard';
+import { linkedinData } from '@/data/linkedinData';
 
 const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { personal, about, education, certifications } = linkedinData;
 
   const timeline = [
     {
-      year: '2024',
-      title: 'Software Engineering Intern',
-      description: 'Built scalable microservices and RESTful APIs',
-      icon: Briefcase,
-    },
-    {
-      year: '2023',
-      title: 'Full Stack Developer Intern',
-      description: 'Developed React applications with Node.js backend',
-      icon: Code2,
-    },
-    {
-      year: '2021 - Present',
-      title: 'B.Tech in Computer Science',
-      description: 'CGPA: 8.5/10 | Expected Graduation: 2025',
+      year: education[0].duration,
+      title: education[0].degree,
+      description: `${education[0].field} | CGPA: ${education[0].grade}`,
       icon: GraduationCap,
     },
+    ...certifications.map((cert) => ({
+      year: cert.date.replace('Issued ', ''),
+      title: `${cert.name} Certified`,
+      description: `${cert.issuer} - Credential ID: ${cert.credentialId}`,
+      icon: Award,
+    })),
   ];
 
   return (
@@ -57,16 +53,13 @@ const AboutSection = () => {
                 <div className="flex flex-col items-center text-center">
                   <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent p-1 mb-6">
                     <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                      <span className="text-4xl font-bold gradient-text">JD</span>
+                      <span className="text-4xl font-bold gradient-text">{personal.initials}</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">John Doe</h3>
-                  <p className="text-primary mb-4">Computer Science Engineering Student</p>
+                  <h3 className="text-2xl font-bold mb-2">{personal.name}</h3>
+                  <p className="text-primary mb-4">{personal.headline}</p>
                   <p className="text-muted-foreground leading-relaxed">
-                    A passionate software developer with a strong foundation in computer science
-                    fundamentals. I love building elegant solutions to complex problems and am
-                    always eager to learn new technologies. Currently focused on full-stack
-                    development and cloud technologies.
+                    {about}
                   </p>
                 </div>
               </div>

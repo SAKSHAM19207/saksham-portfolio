@@ -1,17 +1,12 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, Mail, Github } from 'lucide-react';
+import { ArrowDown, Download, Mail, Github, Linkedin } from 'lucide-react';
 import FloatingShapes from '../FloatingShapes';
 import AnimatedText from '../AnimatedText';
 import { Button } from '@/components/ui/button';
+import { linkedinData } from '@/data/linkedinData';
 
 const HeroSection = () => {
-  const roles = [
-    'Software Developer',
-    'Problem Solver',
-    'CSE Student',
-    'Tech Enthusiast',
-  ];
-
+  const { personal, roles } = linkedinData;
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <FloatingShapes />
@@ -24,15 +19,17 @@ const HeroSection = () => {
           className="text-center"
         >
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 glass-card mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">Open to opportunities</span>
-          </motion.div>
+          {personal.openToWork && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 glass-card mb-8"
+            >
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm text-muted-foreground">{personal.seeking}</span>
+            </motion.div>
+          )}
 
           {/* Name */}
           <motion.h1
@@ -41,7 +38,7 @@ const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold font-display mb-6"
           >
-            <span className="gradient-text text-glow">John Doe</span>
+            <span className="gradient-text text-glow">{personal.name}</span>
           </motion.h1>
 
           {/* Animated roles */}
@@ -98,12 +95,20 @@ const HeroSection = () => {
             className="flex items-center justify-center gap-4 mt-12"
           >
             <a
-              href="https://github.com"
+              href={personal.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 glass-card hover:glow-primary transition-all duration-300"
             >
               <Github className="w-5 h-5" />
+            </a>
+            <a
+              href={personal.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 glass-card hover:glow-accent transition-all duration-300"
+            >
+              <Linkedin className="w-5 h-5" />
             </a>
           </motion.div>
         </motion.div>
