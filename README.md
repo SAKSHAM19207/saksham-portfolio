@@ -17,7 +17,7 @@ This is my personal portfolio website built using modern web technologies.
 - Contact section
 
 ## Live Website
-https://sakshamkhandelwal.vercel.app
+https://saksham-khandelwal.vercel.app/
 
 ## Author
 Saksham Khandelwal
