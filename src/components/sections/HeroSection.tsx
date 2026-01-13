@@ -72,9 +72,12 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               className="gap-2 glass border-primary/30 hover:bg-primary/10"
+              asChild
             >
-              <Download className="w-4 h-4" />
-              Resume
+              <a href="/Saksham_Khandelwal_Resume.pdf" download>
+                <Download className="w-4 h-4" />
+                Resume
+              </a>
             </Button>
             <Button
               size="lg"
