@@ -45,8 +45,12 @@ const Navigation = () => {
   }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'py-6'}`}>
       <div className="container px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="text-xl font-bold font-display gradient-text">
-          ​SK
+        <a href="#" className="flex items-center">
+          <img
+            src="/sk.png"
+            alt="Saksham Khandelwal"
+            className="h-8 w-auto"
+          />
         </a>
 
         {/* Desktop Navigation */}
