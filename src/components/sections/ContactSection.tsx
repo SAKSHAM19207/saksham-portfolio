@@ -1,11 +1,12 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import TiltCard from '../TiltCard';
 import { toast } from 'sonner';
+import { linkedinData } from '@/data/linkedinData';
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -19,10 +20,9 @@ const ContactSection = () => {
   };
 
   const socials = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:john@example.com', label: 'Email' },
+    { icon: Github, href: linkedinData.personal.githubUrl, label: 'GitHub' },
+    { icon: Linkedin, href: linkedinData.personal.linkedinUrl, label: 'LinkedIn' },
+    { icon: Mail, href: `mailto:${linkedinData.personal.email}`, label: 'Email' },
   ];
 
   return (
@@ -62,8 +62,8 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <a href="mailto:john@example.com" className="text-foreground hover:text-primary transition-colors">
-                        john@example.com
+                      <a href={`mailto:${linkedinData.personal.email}`} className="text-foreground hover:text-primary transition-colors">
+                        {linkedinData.personal.email}
                       </a>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="text-foreground">San Francisco, CA</p>
+                      <p className="text-foreground">{linkedinData.personal.location}</p>
                     </div>
                   </div>
                 </div>
