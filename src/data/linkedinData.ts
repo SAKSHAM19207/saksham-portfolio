@@ -24,14 +24,14 @@ export const linkedinData = {
     'DSA Enthusiast',
   ],
 
-  about: `I am a second-year B.Tech Computer Science and Engineering (Core) student at VIT-AP with a strong academic record (CGPA: 9.2). I am actively building a solid foundation in Data Structures and Algorithms using Java, with a passion for solving complex problems and building secure, scalable software solutions.`,
+  about: `I am a second-year B.Tech Computer Science and Engineering (Core) student at VIT-AP with a strong academic record (CGPA: 9.06). I am actively building a solid foundation in Data Structures and Algorithms using Java, with a passion for solving complex problems and building secure, scalable software solutions.`,
 
   education: [
     {
       institution: 'Vellore Institute of Technology, Amaravati (VIT-AP)',
       degree: 'Bachelor of Technology (B.Tech)',
       field: 'Computer Science and Engineering (Core)',
-      grade: '9.2',
+      grade: '9.06',
       duration: 'Oct 2024 - 2028',
       activities: 'Smart India Hackathon participant; Member, Microsoft Student Chapter (Hackathons & technical events)',
       skills: ['Object-Oriented Programming (OOP)', 'C', 'Java', 'Python', 'Data Structures', 'Algorithms'],
@@ -165,7 +165,7 @@ export const linkedinData = {
     },
     {
       title: 'Academic Excellence',
-      description: 'Maintaining CGPA of 9.2 at VIT-AP',
+      description: 'Maintaining CGPA of 9.06 at VIT-AP',
       year: '2024-Present',
     },
   ],
