@@ -88,6 +88,14 @@ export const linkedinData = {
 
   projects: [
     {
+      title: 'AttendAI-Prototype',
+      description: 'AttendAI Prototype is a facial-recognition attendance demo that shows how a modern classroom attendance workflow could work with camera-based face registration, live recognition, and role-based dashboards for admins, teachers, and students.',
+      tech: ['React 19', 'Vite', 'FastAPI', 'Uvicorn', 'Pillow', 'NumPy', 'Node.js', 'Python'],
+      github: 'https://github.com/SAKSHAM19207/AttendAI-Prototype',
+      live: 'https://attend-ai-prototype.vercel.app/',
+      association: 'Personal',
+    },
+    {
       title: 'Secure File Sharing System',
       description: 'A Java-based secure file sharing system implementing authentication, AES encryption, and role-based access control. Focused on encryption, authentication, and secure access control mechanisms.',
       tech: ['Java', 'OOP', 'AES Encryption', 'File Handling'],
