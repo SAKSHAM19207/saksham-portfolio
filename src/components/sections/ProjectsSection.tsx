@@ -34,7 +34,18 @@ const ProjectsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <TiltCard className="h-full">
-                <div className="glass-card p-6 h-full hover:glow-primary transition-all duration-300 group">
+                <div
+                  className="glass-card p-6 h-full hover:glow-primary transition-all duration-300 group block cursor-pointer"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => window.open(project.live || project.github, '_blank', 'noopener,noreferrer')}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      window.open(project.live || project.github, '_blank', 'noopener,noreferrer');
+                    }
+                  }}
+                >
                   <div className="flex items-start justify-between mb-4">
                     <Folder className="w-10 h-10 text-primary" />
                     <div className="flex gap-3">
@@ -42,7 +53,8 @@ const ProjectsSection = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted-foreground hover:text-primary transition-colors relative z-10"
+                        onClick={(event) => event.stopPropagation()}
                       >
                         <Github className="w-5 h-5" />
                       </a>
@@ -51,7 +63,8 @@ const ProjectsSection = () => {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground hover:text-primary transition-colors relative z-10"
+                          onClick={(event) => event.stopPropagation()}
                         >
                           <ExternalLink className="w-5 h-5" />
                         </a>
