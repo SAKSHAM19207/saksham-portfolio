@@ -165,7 +165,7 @@ export const linkedinData = {
     },
     {
       title: 'Academic Excellence',
-      description: 'Maintaining CGPA of 9.06 at VIT-AP',
+      description: 'Maintaining CGPA of 9.09 at VIT-AP',
       year: '2024-Present',
     },
   ],
